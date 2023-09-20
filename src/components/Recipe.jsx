@@ -41,7 +41,7 @@ export default function Recipe(){
                        <img src={item.recipe.image} alt={item.recipe.image} />
                        <p>{item.recipe.label}</p>
                        <div className="mt-2 grid place-items-center">
-                        <Link to={`/ingredients`} className="bg-red-300 p-2 text-white rounded-sm">Ingredients</Link>
+                        <Link to={`/ingredients/${item.recipe.label}`} className="bg-red-300 p-2 text-white rounded-sm">Ingredients</Link>
                        </div>
                    </div>
                ))}
