@@ -30,7 +30,7 @@ export default function Recipe(){
     const btnSearch = () => {setQuery(searchRecipes)}
     return(
         <>
-       
+            <NavBar/>
             <div className="flex justify-center items-center h-40 gap-3">
                 <input type="text" placeholder="Enter Recipe" className="outline-none p-2 border-2 border-red-300/100" onChange={handleChange} />
                 <button className="w-36 bg-red-300 text-white p-2 rounded-full" onClick={btnSearch}>Search</button>
