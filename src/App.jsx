@@ -8,7 +8,6 @@ export default function App(){
   return(
     <>
       <BrowserRouter>
-        <NavBar/>
         <Routes>
           <Route index element={<Recipe/>}/>
             <Route path="/ingredients/:id" element={<Ingredients/>}/>
