@@ -7,7 +7,7 @@ export default function Recipe(){
     const APP_KEY =  'ed7c1f438f1e6ee45363d8863aac483b'
     const APP_ID = 'd52f0aa6' 
     const [recipes,setRecipes] = useState([]);
-    const [query,setQuery] = useState('salad');
+    const [query,setQuery] = useState('chicken');
     const [searchRecipes,setSearchRecipes] = useState();
     const [isLoading,setLoading] = useState(true);
     useEffect(() => {
@@ -30,18 +30,17 @@ export default function Recipe(){
     const btnSearch = () => {setQuery(searchRecipes)}
     return(
         <>
-            <NavBar/>
             <div className="flex justify-center items-center h-40 gap-3">
                 <input type="text" placeholder="Enter Recipe" className="outline-none p-2 border-2 border-red-300/100" onChange={handleChange} />
                 <button className="w-36 bg-red-300 text-white p-2 rounded-full" onClick={btnSearch}>Search</button>
             </div>
-            <div className="grid place-items-center grid-cols-1 md:grid-cols-3 gap-5">
+            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-10 p-10">
                 {isLoading ?  ''  : recipes.map((item,index) => (
-                   <div  className="" key={index}>
-                       <img src={item.recipe.image} alt={item.recipe.image} />
-                       <p>{item.recipe.label}</p>
-                       <div className="mt-2 grid place-items-center">
-                        <Link to={`/ingredients/${item.recipe.label}`} className="bg-red-300 p-2 text-white rounded-sm">Ingredients</Link>
+                   <div  className="mt-5 p-2" key={index}>
+                       <img className="h-[200px] w-screen object-cover rounded-2xl drop-shadow-md hover:scale-[1.1] duration-75" src={item.recipe.image} alt={item.recipe.image} />
+                       <div className="mt-2 grid px-2">
+                       <p className="py-4 w-30">{item.recipe.label}</p>
+                        <Link to={`${item.recipe.url}`} >Ingredients</Link>
                        </div>
                    </div>
                ))}
